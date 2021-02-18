@@ -1,0 +1,10 @@
+*.pyc
+downloads/*
+usr
+download*
+*db.sqlite3*
+*/migrations*
+*/__pycache__/
+sites/*
+logs/*.log
+static/admin/
