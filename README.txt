@@ -27,7 +27,7 @@ Step 5 : Run the server in development mode::
          Note : Default port is going to be 8000
 
          Try to access below url in browser
-         http://localhost:8000/home
+         http://localhost:8000/
 
          Run with customized port say 8090
          $ ./usr/bin/python3 manage.py runserver 8090
