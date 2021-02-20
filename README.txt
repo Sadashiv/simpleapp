@@ -35,3 +35,34 @@ Step 5 : Run the server in development mode::
          If it's not able to access into other machine open for any IP in same network
          $ ./usr/bin/python3 manage.py runserver 0.0.0.0:8090
 
+
+Build Docker image, create and start container
+=============================================
+docker build -t simpleapp  .
+docker container create containerapp -p 8000:8000 simpleapp
+docker container create --name containerapp -p 8000:8000 simpleapp
+docker exec -it containerapp /bin//bash
+http://localhost:8000/
+
+Docker image URL: https://hub.docker.com/repository/docker/9538253250/simpleapp
+
+
+Login to aws.com
+Containers - Elastic Container Service
+Create new task definition -> task definition name(simplepptask) -> add container -> container name(simpleappcontainer) -> docker.io/9538253250/simpleapp:latest
+map host port(8000) and container port(8000) then click on create - Task creation completed successfully
+
+
+Clusters->create cluster-> EC2 Linux + Networking click on Next Step
+Cluster name(simpleappcluster) -> click on create
+Select launch type as EC2 -> click on cluster create -> tasks -> Run new task -> Select task created -> select cluster -> Run Task
+
+
+Deloper Tools -> Code Pipeline ->
+pipeline name(simpleapp_pipeline) click on next
+Source provider(code)->GitHub(Verson 2)
+Connect to github-> reponame (Sadashiv/simplepp)->branchname(master) click on next
+By passing build since we are not building any package like jar, war any package.
+Select deploy provider(amazon ecs) -> cluster name(simpleappcluster) -> service name(simplepptask) -> click on next
+Create pipeline
+

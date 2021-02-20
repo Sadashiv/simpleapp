@@ -1,0 +1,21 @@
+version: 0.1
+
+phase:
+  install:
+    commonds:
+      - apt-get update -y
+      - apt-get install -y gcc libncursesw5-dev libgdbm-dev libc6-dev libsqlite3-dev tk-dev libssl-dev \
+        openssl zlib1g-dev libffi-dev libmysqlclient-dev libsasl2-dev python-dev libldap2-dev libbz2-dev
+
+  pre_build:
+    commands:
+      - pip install -r requirements.txt
+
+  build:
+    commands:
+      - python manage.py migrate
+      - nohup python manage.py runserver 0.0.0.0:8000
+
+  post_build:
+    commands:
+      - echo "Simple App is ready"
