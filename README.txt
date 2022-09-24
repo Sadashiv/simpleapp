@@ -1,7 +1,6 @@
 RUN app by executing below commands
 ===================================
 
-
 Step 1 : clone git repo either of way you feel compfort:::
          $ git clone https://github.com/Sadashiv/simpleapp.git
          cd simpleapp
