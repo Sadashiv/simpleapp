@@ -5,4 +5,4 @@ ADD https://files.pythonhosted.org/packages/a5/61/a867851fd5ab77277495a8709ddda0
 COPY . /opt
 WORKDIR /opt
 RUN pip install -r requirements.txt
-ENTRYPOINT  ["python3", "manage.py", "runserver", "0.0.0.0:8000"]CMD ["8000"]
+ENTRYPOINT  ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
