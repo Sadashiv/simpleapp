@@ -18,4 +18,4 @@ phase:
 
   post_build:
     commands:
-      - echo "Simple App is ready"
+      - echo "Simple App is ready!!"
